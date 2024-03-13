@@ -1,0 +1,39 @@
+﻿@page "/"
+@using JuniorCodeTest.Models
+
+<PageTitle>Random Users List</PageTitle>
+
+<h1>Random Users List</h1>
+
+<p>Please find below a list of random users</p>
+
+@if (RandomUsers.Count == 0)
+{
+	<p><em>Loading...</em></p>
+}
+else
+{
+	<table class="table">
+		<thead>
+			<tr>
+				<th scope="col">Title</th>
+				<th scope="col">First Name</th>
+				<th scope="col">Last Name</th>
+				<th scope="col">Age</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var randomUser in RandomUsers)
+			{
+				<tr>
+					<td>@randomUser.Title</td>
+					<td>@randomUser.First</td>
+					<td>@randomUser.Last</td>
+					<td>@randomUser.Age</td>
+					<td>@randomUser.latitude</td>
+					<td>@randomUser.longitude</td>
+				</tr>
+			}
+		</tbody>
+	</table>
+}
